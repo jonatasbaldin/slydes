@@ -26,6 +26,7 @@ setup(
     description='Why not show your presentations with Python?',
     long_description=get_long_description('README.md'),
     long_description_content_type='text/markdown',
+    packages=['slydes'],
     author='Jonatas Baldin',
     author_email='jonatas.baldin@gmail.com',
     install_requires=[],
