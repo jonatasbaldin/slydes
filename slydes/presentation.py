@@ -1,7 +1,7 @@
 import os
 
 
-class Presentation():
+class Presentation:
 
     def __init__(self):
         self._slides = []
@@ -14,8 +14,8 @@ class Presentation():
 
     def __repr__(self):
         return (f'<Presentation: current_slide: {self._current_slide}, '
-                   f'next_slide: {self._next_slide}, '
-                   f'previous_slide: {self._previous_slide}')
+                f'next_slide: {self._next_slide}, '
+                f'previous_slide: {self._previous_slide}')
 
     def __clear(self):
         os.system('clear')
