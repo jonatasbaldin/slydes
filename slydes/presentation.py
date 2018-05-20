@@ -1,4 +1,29 @@
+import sys
+import termios
+import tty
+from contextlib import contextmanager
+
 import os
+
+INTERRUPT = 3
+UP_KEY = 65
+DOWN_KEY = 66
+RIGHT_KEY = 67
+LEFT_KEY = 68
+
+NEXT_KEYS = (RIGHT_KEY, DOWN_KEY)
+PREV_KEYS = (LEFT_KEY, UP_KEY)
+
+
+@contextmanager
+def raw_stdin():
+    try:
+        fd = sys.stdin.fileno()
+        settings = termios.tcgetattr(fd)
+        tty.setraw(fd)
+        yield
+    finally:
+        termios.tcsetattr(fd, termios.TCSADRAIN, settings)
 
 
 class Presentation:
@@ -63,3 +88,22 @@ class Presentation:
             self.__clear()
             self._next_slide = self._previous_slide
             return self.next()
+
+    def _read_input(self):
+        with raw_stdin():
+            char = sys.stdin.read(1)
+
+        return ord(char)
+
+    def present(self):
+        self.next()
+
+        while True:
+            key = self._read_input()
+
+            if key in PREV_KEYS:
+                self.previous()
+            elif key in NEXT_KEYS:
+                self.next()
+            elif key == INTERRUPT:
+                return
