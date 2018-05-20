@@ -1,9 +1,8 @@
+import os
 import sys
 import termios
 import tty
 from contextlib import contextmanager
-
-import os
 
 INTERRUPT = 3
 UP_KEY = 65
