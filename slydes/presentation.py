@@ -16,6 +16,10 @@ PREV_KEYS = (LEFT_KEY, UP_KEY)
 
 @contextmanager
 def raw_stdin():
+    """
+    This context manager makes sure to put stdin into raw mode before reading
+    any data. After the context is done it resets to previous settings.
+    """
     try:
         fd = sys.stdin.fileno()
         settings = termios.tcgetattr(fd)
