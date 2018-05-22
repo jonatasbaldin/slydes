@@ -1,8 +1,0 @@
-[run]
-source = slydes
-
-[report]
-show_missing = true
-
-[xml]
-output = build/coverage.xml
