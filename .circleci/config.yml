@@ -5,5 +5,5 @@ jobs:
       - image: circleci/python:3.6
     steps:
       - checkout
-      - chmod +x scripts/*
+      - run: chmod +x scripts/*
       - run: scripts/ci
