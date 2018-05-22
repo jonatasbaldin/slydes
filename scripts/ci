@@ -4,3 +4,4 @@ pip install pipenv
 scripts/setup
 scripts/lint
 scripts/test
+bash <(curl -s https://codecov.io/bash)
