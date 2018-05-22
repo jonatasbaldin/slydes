@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Base on https://github.com/encode/apistar/blob/master/scripts/publish
+# Runs locally on the master branch, needs PiPY access
+
+export VERSION=`cat slydes/__init__.py | grep __version__ | sed "s/__version__ = //" | sed "s/'//g"`
+
+find slydes -type f -name "*.py[co]" -delete
+find slydes -type d -name __pycache__ -delete
+
+pipenv run python setup.py sdist
+pipenv run twine upload dist/*
+
+echo "You probably want to also tag the version now:"
+echo "git tag -a ${VERSION} -m 'version ${VERSION}'"
+echo "git push --tags"
+
+rm -r dist
