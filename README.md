@@ -1,6 +1,9 @@
 # Slydes
 Why not show your presentations with Python?
 
+[![codecov](https://codecov.io/gh/jonatasbaldin/slydes/branch/master/graph/badge.svg)](https://codecov.io/gh/jonatasbaldin/slydes)
+[![CircleCI](https://circleci.com/gh/jonatasbaldin/slydes/tree/master.svg?style=svg)](https://circleci.com/gh/jonatasbaldin/slydes/tree/master)
+
 ### Create a presentation
 `$ cat presentation.py`
 
