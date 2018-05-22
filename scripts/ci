@@ -1,0 +1,7 @@
+#!/bin/sh
+
+pip install pipenv
+scripts/setup
+scripts/lint
+scripts/test
+pipenv run codecov

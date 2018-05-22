@@ -1,0 +1,4 @@
+#!/bin/sh
+
+pipenv run flake8 slydes tests --max-line-length=120
+pipenv run isort slydes tests --recursive --m=3 --diff
