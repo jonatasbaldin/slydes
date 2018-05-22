@@ -12,6 +12,7 @@ pytest-mock = "*"
 flake8 = "*"
 isort = "*"
 codecov = "*"
+twine = "*"
 
 [requires]
 python_version = "3.6"

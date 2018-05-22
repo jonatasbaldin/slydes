@@ -4,6 +4,11 @@ Why not show your presentations with Python?
 [![codecov](https://codecov.io/gh/jonatasbaldin/slydes/branch/master/graph/badge.svg)](https://codecov.io/gh/jonatasbaldin/slydes)
 [![CircleCI](https://circleci.com/gh/jonatasbaldin/slydes/tree/master.svg?style=svg)](https://circleci.com/gh/jonatasbaldin/slydes/tree/master)
 
+### Installing
+```bash
+$ pip install slydes
+```
+
 ### Create a presentation
 `$ cat presentation.py`
 
@@ -34,17 +39,9 @@ def second_slide():
     * not?
     '''
     return template.default(title, msg)
-
-
-@talk.add_slide
-def third_slide():
-    title = 'The last slide!'
-    msg = 'Bye world!'
-    return template.default(title, msg)
 ```
 
-
-### Run it!
+### Run it
 `$ ipython`
 ```bash
 from presentation import talk
@@ -70,77 +67,26 @@ talk.next()
 #                                                                              #
 #                                                                              #
 --------------------------------------------------------------------------------
-
-talk.next()
---------------------------------------------------------------------------------
-#                                                                              #
-#                                                                              #
-#      The second slide!                                                       #
-#                                                                              #
-#                                                                              #
-#          * Bullet points!                                                    #
-#          * why                                                               #
-#          * not?                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
---------------------------------------------------------------------------------
-
-talk.previous()
---------------------------------------------------------------------------------
-#                                                                              #
-#                                                                              #
-#      This is the title!                                                      #
-#                                                                              #
-#                                                                              #
-#          Hello world!                                                        #
-#          My name is PySlides!                                                #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
---------------------------------------------------------------------------------
-
-talk.current()
---------------------------------------------------------------------------------
-#                                                                              #
-#                                                                              #
-#      This is the title!                                                      #
-#                                                                              #
-#                                                                              #
-#          Hello world!                                                        #
-#          My name is PySlides!                                                #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
-#                                                                              #
---------------------------------------------------------------------------------
 ```
 
-### Installing
-```bash
-$ pip install slydes
+### Presentation Mode
+Now you can navigate the presentation using the arrow keys! To exit, just type `CTRL+C`.
+```python
+talk.present()
+```
+
+### Complete API
+```python
+# Move to next slide
+talk.next()
+# or
+talk()
+
+# Move to previous slide
+talk.previous()
+
+# Shows current slide
+talk.current()
 ```
 
 ### Important (or not!)
