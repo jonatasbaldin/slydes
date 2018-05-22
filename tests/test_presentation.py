@@ -1,7 +1,13 @@
 import pytest
 
 from slydes import Presentation
-from slydes.presentation import RIGHT_KEY, DOWN_KEY, INTERRUPT, LEFT_KEY, UP_KEY
+from slydes.presentation import (
+    DOWN_KEY,
+    INTERRUPT,
+    LEFT_KEY,
+    RIGHT_KEY,
+    UP_KEY
+)
 
 
 class TestPresentLoop:
