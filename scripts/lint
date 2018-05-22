@@ -1,0 +1,3 @@
+#!/bin/sh
+
+pipenv run flake8 slydes tests --max-line-length=120
